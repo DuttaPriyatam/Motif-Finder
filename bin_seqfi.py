@@ -188,8 +188,8 @@ def finding_motifs(start_pos, end_pos, gen_id, per_bin, gen_file, motif):
             slider.fit(res_arr)
             i=0
 
-            template=0
-            non_template=0
+    #        template=0
+     #       non_template=0
 
             while True:
                 data=slider.slide()
@@ -205,7 +205,7 @@ def finding_motifs(start_pos, end_pos, gen_id, per_bin, gen_file, motif):
             
                 count_rev=reverse_List.count(string)
                 PAM_rev_count.append(count_rev)
-                template=template+count_rev
+   #             template=template+count_rev
                 i=i+1
 
                 if slider.reached_end_of_list():
@@ -223,8 +223,8 @@ def finding_motifs(start_pos, end_pos, gen_id, per_bin, gen_file, motif):
                     dict1.clear()
                     x=x+bin_size+2
                     break
-            total_temp=total_temp+template
-            total_non_temp=total_non_temp+non_template
+  #          total_temp=total_temp+template
+  #          total_non_temp=total_non_temp+non_template
     
     count_list=[total_temp, total_non_temp]
     return(count_list)
@@ -245,13 +245,13 @@ bin_size=make_gene_data(start_positions, end_positions, ids, new_end, file_list[
 print(bin_size)
 count_list=finding_motifs(start_positions, new_end, ids, bin_size, file_list[0], file_list[2])
 
-total=count_list[0]+count_list[1]
-average=total/2901
+#total=count_list[0]+count_list[1]
+#average=total/2901
 
-print("Total PAMS on non-template strand :"+str(count_list[0]))
-print("Total PAMS on template strand :"+str(count_list[1]))
-print("Total count of PAMs: "+str(total))
-print("Average occurrence of PAM :"+str(average))
+#print("Total PAMS on non-template strand :"+str(count_list[0]))
+#print("Total PAMS on template strand :"+str(count_list[1]))
+#print("Total count of PAMs: "+str(total))
+#print("Average occurrence of PAM :"+str(average))
 
 #Removing the temporary files that were generated for the job
 os.system('rm plus*')
